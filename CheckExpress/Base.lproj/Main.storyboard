@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="h9H-UK-80b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="h9H-UK-80b">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -28,7 +29,7 @@
                                     <rect key="frame" x="95" y="271" width="210" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-CM-8xh">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-CM-8xh">
                                 <rect key="frame" x="413" y="285" width="46" height="30"/>
                                 <state key="normal" title="选择"/>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
@@ -36,16 +37,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="selectBtnClick:" destination="Zxv-Zq-hVA" eventType="touchUpInside" id="yl1-Cb-ehj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhE-sC-Wh9">
-                                <rect key="frame" x="413" y="214" width="46" height="30"/>
-                                <state key="normal" title="扫描"/>
-                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="313" y="149" width="46" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="scanningBtnClick:" destination="Zxv-Zq-hVA" eventType="touchUpInside" id="Vaz-Iz-njZ"/>
+                                    <segue destination="JI9-Md-bKX" kind="show" id="Dkl-z8-su3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入单号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDd-aJ-cLh">
@@ -68,11 +60,23 @@
                                     <action selector="searchBtnClick:" destination="Zxv-Zq-hVA" eventType="touchUpInside" id="j0i-c5-gVQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhE-sC-Wh9">
+                                <rect key="frame" x="413" y="215" width="46" height="30"/>
+                                <state key="normal" title="扫描"/>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="313" y="149" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="scanningBtnClick:" destination="Zxv-Zq-hVA" eventType="touchUpInside" id="Vaz-Iz-njZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nDd-aJ-cLh" firstAttribute="centerX" secondItem="xX5-uV-a0P" secondAttribute="centerX" id="8YS-dk-EXc"/>
+                            <constraint firstItem="LhE-sC-Wh9" firstAttribute="leading" secondItem="nDd-aJ-cLh" secondAttribute="trailing" constant="4" id="Hs8-IY-QDH"/>
                             <constraint firstItem="2kY-Z6-VLB" firstAttribute="centerX" secondItem="xX5-uV-a0P" secondAttribute="centerX" id="aOr-em-OG3"/>
+                            <constraint firstItem="dt2-CM-8xh" firstAttribute="leading" secondItem="e9G-vs-B90" secondAttribute="trailing" constant="4" id="gqt-Wa-g6x"/>
                             <constraint firstItem="e9G-vs-B90" firstAttribute="centerX" secondItem="xX5-uV-a0P" secondAttribute="centerX" id="rEP-Cr-1KW"/>
                         </constraints>
                     </view>
@@ -81,6 +85,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8VJ-ny-uMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="541" y="706"/>
+        </scene>
+        <!--Companies List View Controller-->
+        <scene sceneID="4Kv-pG-OSA">
+            <objects>
+                <viewController id="JI9-Md-bKX" customClass="CompaniesListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FxY-NF-hpr"/>
+                        <viewControllerLayoutGuide type="bottom" id="O3o-hJ-JaF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mP7-6V-Lif">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xfP-Lq-mMJ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JI9-Md-bKX" id="60K-mO-PuN"/>
+                                    <outlet property="delegate" destination="JI9-Md-bKX" id="ZKB-mO-Dnt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xfP-Lq-mMJ" firstAttribute="top" secondItem="FxY-NF-hpr" secondAttribute="bottom" id="3HB-hD-EMN"/>
+                            <constraint firstItem="O3o-hJ-JaF" firstAttribute="top" secondItem="xfP-Lq-mMJ" secondAttribute="bottom" id="AUy-Q9-5AD"/>
+                            <constraint firstItem="xfP-Lq-mMJ" firstAttribute="leading" secondItem="mP7-6V-Lif" secondAttribute="leadingMargin" constant="-20" id="Fd3-9c-dBo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xfP-Lq-mMJ" secondAttribute="trailing" constant="-20" id="snm-fD-eWP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="companiesTableView" destination="xfP-Lq-mMJ" id="Eaa-5k-2KY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0q-tu-nVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="706"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4xS-AN-mD4">

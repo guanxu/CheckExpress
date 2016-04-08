@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E9949911CB79AD3006A2C0B /* ExpressCompanyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E9949901CB79AD3006A2C0B /* ExpressCompanyList.plist */; };
+		0E9949911CB79AD3006A2C0B /* CompaniesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E9949901CB79AD3006A2C0B /* CompaniesList.plist */; };
 		ECD356131CB69B9600E53A52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356121CB69B9600E53A52 /* main.m */; };
 		ECD356161CB69B9600E53A52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356151CB69B9600E53A52 /* AppDelegate.m */; };
 		ECD3561C1CB69B9600E53A52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECD3561A1CB69B9600E53A52 /* Main.storyboard */; };
@@ -29,10 +29,11 @@
 		ECD356601CB6ACDD00E53A52 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356511CB6ACDD00E53A52 /* AFURLResponseSerialization.m */; };
 		ECD356611CB6ACDD00E53A52 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356531CB6ACDD00E53A52 /* AFURLSessionManager.m */; };
 		ECD356691CB6B51E00E53A52 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356681CB6B51E00E53A52 /* MainViewController.m */; };
+		ECFF2E291CB7E42100A45DA5 /* CompaniesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFF2E281CB7E42100A45DA5 /* CompaniesListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E9949901CB79AD3006A2C0B /* ExpressCompanyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExpressCompanyList.plist; sourceTree = "<group>"; };
+		0E9949901CB79AD3006A2C0B /* CompaniesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CompaniesList.plist; sourceTree = "<group>"; };
 		ECD3560E1CB69B9600E53A52 /* CheckExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD356121CB69B9600E53A52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECD356141CB69B9600E53A52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +75,8 @@
 		ECD356671CB6B51E00E53A52 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		ECD356681CB6B51E00E53A52 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		ECD3566A1CB6B54600E53A52 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constant.h; path = "工具/Constant.h"; sourceTree = "<group>"; };
+		ECFF2E271CB7E42100A45DA5 /* CompaniesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesListViewController.h; sourceTree = "<group>"; };
+		ECFF2E281CB7E42100A45DA5 /* CompaniesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 		ECD356101CB69B9600E53A52 /* CheckExpress */ = {
 			isa = PBXGroup;
 			children = (
+				ECFF2E261CB7E3ED00A45DA5 /* 快递公司列表 */,
 				ECD356661CB6B51E00E53A52 /* 主页 */,
 				ECD356621CB6AD7C00E53A52 /* 工具 */,
 				ECD356321CB6ACDD00E53A52 /* 第三方 */,
@@ -125,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				ECD356121CB69B9600E53A52 /* main.m */,
-				0E9949901CB79AD3006A2C0B /* ExpressCompanyList.plist */,
+				0E9949901CB79AD3006A2C0B /* CompaniesList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,6 +219,15 @@
 			path = "主页";
 			sourceTree = "<group>";
 		};
+		ECFF2E261CB7E3ED00A45DA5 /* 快递公司列表 */ = {
+			isa = PBXGroup;
+			children = (
+				ECFF2E271CB7E42100A45DA5 /* CompaniesListViewController.h */,
+				ECFF2E281CB7E42100A45DA5 /* CompaniesListViewController.m */,
+			);
+			path = "快递公司列表";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,7 +288,7 @@
 				ECD356241CB69B9600E53A52 /* LaunchScreen.storyboard in Resources */,
 				ECD356211CB69B9600E53A52 /* Assets.xcassets in Resources */,
 				ECD3561C1CB69B9600E53A52 /* Main.storyboard in Resources */,
-				0E9949911CB79AD3006A2C0B /* ExpressCompanyList.plist in Resources */,
+				0E9949911CB79AD3006A2C0B /* CompaniesList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +301,7 @@
 			files = (
 				ECD3565E1CB6ACDD00E53A52 /* AFURLConnectionOperation.m in Sources */,
 				ECD3561F1CB69B9600E53A52 /* CheckExpress.xcdatamodeld in Sources */,
+				ECFF2E291CB7E42100A45DA5 /* CompaniesListViewController.m in Sources */,
 				ECD3565D1CB6ACDD00E53A52 /* AFSecurityPolicy.m in Sources */,
 				ECD356581CB6ACDD00E53A52 /* DataModel.m in Sources */,
 				ECD3565A1CB6ACDD00E53A52 /* AFHTTPRequestOperationManager.m in Sources */,
