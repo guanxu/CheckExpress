@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 
-//test gtihub
-
 @interface AppDelegate ()
 
 @end
