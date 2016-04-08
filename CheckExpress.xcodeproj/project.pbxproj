@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E9949911CB79AD3006A2C0B /* ExpressCompanyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E9949901CB79AD3006A2C0B /* ExpressCompanyList.plist */; };
 		ECD356131CB69B9600E53A52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356121CB69B9600E53A52 /* main.m */; };
 		ECD356161CB69B9600E53A52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356151CB69B9600E53A52 /* AppDelegate.m */; };
 		ECD3561C1CB69B9600E53A52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECD3561A1CB69B9600E53A52 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E9949901CB79AD3006A2C0B /* ExpressCompanyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExpressCompanyList.plist; sourceTree = "<group>"; };
 		ECD3560E1CB69B9600E53A52 /* CheckExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD356121CB69B9600E53A52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECD356141CB69B9600E53A52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				ECD356121CB69B9600E53A52 /* main.m */,
+				0E9949901CB79AD3006A2C0B /* ExpressCompanyList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				ECD356241CB69B9600E53A52 /* LaunchScreen.storyboard in Resources */,
 				ECD356211CB69B9600E53A52 /* Assets.xcassets in Resources */,
 				ECD3561C1CB69B9600E53A52 /* Main.storyboard in Resources */,
+				0E9949911CB79AD3006A2C0B /* ExpressCompanyList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +452,7 @@
 				ECD3562A1CB69B9600E53A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

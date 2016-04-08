@@ -37,6 +37,14 @@
     popView.ParentView = self.view;
 }
 
+//扫描
+- (IBAction)scanningBtnClick:(UIButton *)sender {
+}
+
+//选择快递公司
+- (IBAction)selectBtnClick:(UIButton *)sender {
+}
+
 //点击查询按钮
 - (IBAction)searchBtnClick:(UIButton *)sender {
     //检测输入是否正确
@@ -67,13 +75,16 @@
     NSDictionary *paramet = @{@"type"       :      @"SFEXPRESS",
                               @"number":      @"993213992811"};
     //请求
-    [[APIClient sharedClient] requestPath:@"http://apis.baidu.com/netpopo/express/express1"
-                               parameters:paramet
+    [[APIClient sharedClient] requestPath:@"http://apis.baidu.com/netpopo/express/express2"
+                               parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id JSON)
      //成功回调
      {
+         
+         
          //解析数据
-         NSLog(@"JSON : %@",JSON);
+         NSDictionary *jsonDic = [JSON objectForKey:@"result"];
+         [jsonDic writeToFile:@"CompanyList.plist" atomically:YES];
          
          
          [self.view addSubview:popView];
