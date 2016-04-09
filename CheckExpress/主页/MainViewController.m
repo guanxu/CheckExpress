@@ -10,15 +10,20 @@
 #import "APIClient.h"
 #import "PopupView.h"
 #import "LoadingView.h"
+#import "CompaniesListViewController.h"
 
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController{
+    
     //短提示
     PopupView           *popView;
+    //快递公司textFiled
+    IBOutlet UITextField *companyTextFiled;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,6 +48,16 @@
 
 //选择快递公司
 - (IBAction)selectBtnClick:(UIButton *)sender {
+    
+    CompaniesListViewController *companiesListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CompaniesListViewController"];
+    
+    companiesListVC.selectCompany = ^(NSString *companyName,NSString *companyType){
+        self.companyName = companyName;
+        self.companyType = companyType;
+        companyTextFiled.text = self.companyName;
+    };
+    
+    [self.navigationController pushViewController:companiesListVC animated:YES];
 }
 
 //点击查询按钮
@@ -75,12 +90,11 @@
     NSDictionary *paramet = @{@"type"       :      @"SFEXPRESS",
                               @"number":      @"993213992811"};
     //请求
-    [[APIClient sharedClient] requestPath:@"http://apis.baidu.com/netpopo/express/express2"
-                               parameters:nil
+    [[APIClient sharedClient] requestPath:@"http://apis.baidu.com/netpopo/express/express1"
+                               parameters:paramet
                                   success:^(AFHTTPRequestOperation *operation, id JSON)
      //成功回调
      {
-         
          
          //解析数据
          NSDictionary *jsonDic = [JSON objectForKey:@"result"];
@@ -104,14 +118,5 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

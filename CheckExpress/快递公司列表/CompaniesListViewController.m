@@ -19,8 +19,6 @@
     
     //初始化数据
     [self initData];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +35,7 @@
     //刷新列表
     [self.companiesTableView reloadData];
 }
+
 
 /**
  *  UITableView Delegate\DataSource
@@ -71,5 +70,20 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSDictionary *dic = self.companiesArray[indexPath.section];
+    NSArray *companies = dic[@"companies"];
+    
+    if(self.selectCompany){
+        self.selectCompany([companies[indexPath.row] objectForKey:@"name"],[companies[indexPath.row] objectForKey:@"type"]);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"CompaniesListViewController调用");
+}
 
 @end

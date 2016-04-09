@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^SelectCompany)(NSString *companyName,NSString *companyType);
+
 @interface CompaniesListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *companiesArray;
 
-@property (strong, nonatomic) IBOutlet UITableView *companiesTableView;
+@property (nonatomic, strong) IBOutlet UITableView *companiesTableView;
+
+@property (nonatomic , copy) SelectCompany selectCompany;
+
+@property (nonatomic , strong ) NSString *TestStr;
 
 @end
