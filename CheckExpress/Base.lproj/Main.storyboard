@@ -14,21 +14,10 @@
                         <viewControllerLayoutGuide type="top" id="zxR-5e-IEh"/>
                         <viewControllerLayoutGuide type="bottom" id="Iwi-qD-AVk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xX5-uV-a0P">
+                    <view key="view" contentMode="scaleToFill" id="xX5-uV-a0P" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择公司" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9G-vs-B90">
-                                <rect key="frame" x="195" y="285" width="210" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="6GB-Ej-tow"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="95" y="271" width="210" height="30"/>
-                                </variation>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-CM-8xh">
                                 <rect key="frame" x="413" y="285" width="46" height="30"/>
                                 <state key="normal" title="选择"/>
@@ -70,19 +59,28 @@
                                     <action selector="scanningBtnClick:" destination="Zxv-Zq-hVA" eventType="touchUpInside" id="Vaz-Iz-njZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeD-sP-s15">
+                                <rect key="frame" x="195" y="289" width="210" height="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="请选择快递公司"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nDd-aJ-cLh" firstAttribute="centerX" secondItem="xX5-uV-a0P" secondAttribute="centerX" id="8YS-dk-EXc"/>
+                            <constraint firstItem="dt2-CM-8xh" firstAttribute="leading" secondItem="yeD-sP-s15" secondAttribute="trailing" constant="4" id="AZk-qc-Kyh"/>
                             <constraint firstItem="LhE-sC-Wh9" firstAttribute="leading" secondItem="nDd-aJ-cLh" secondAttribute="trailing" constant="4" id="Hs8-IY-QDH"/>
                             <constraint firstItem="2kY-Z6-VLB" firstAttribute="centerX" secondItem="xX5-uV-a0P" secondAttribute="centerX" id="aOr-em-OG3"/>
-                            <constraint firstItem="dt2-CM-8xh" firstAttribute="leading" secondItem="e9G-vs-B90" secondAttribute="trailing" constant="4" id="gqt-Wa-g6x"/>
-                            <constraint firstItem="e9G-vs-B90" firstAttribute="centerX" secondItem="xX5-uV-a0P" secondAttribute="centerX" id="rEP-Cr-1KW"/>
+                            <constraint firstItem="yeD-sP-s15" firstAttribute="centerX" secondItem="xX5-uV-a0P" secondAttribute="centerX" id="vyF-wx-me8"/>
                         </constraints>
+                        <connections>
+                            <action selector="hideKeyboard:" destination="Zxv-Zq-hVA" eventType="touchUpInside" id="FsV-6o-hVc"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="DoU-4L-nxK"/>
                     <connections>
-                        <outlet property="companyTextFiled" destination="e9G-vs-B90" id="0uY-ka-3EL"/>
+                        <outlet property="companyShowBtn" destination="yeD-sP-s15" id="bwM-mm-TON"/>
+                        <outlet property="expressNumber" destination="nDd-aJ-cLh" id="6JP-sr-TJC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8VJ-ny-uMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,7 +90,7 @@
         <!--Companies List View Controller-->
         <scene sceneID="4Kv-pG-OSA">
             <objects>
-                <viewController storyboardIdentifier="CompaniesListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JI9-Md-bKX" customClass="CompaniesListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompaniesListViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JI9-Md-bKX" customClass="CompaniesListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FxY-NF-hpr"/>
                         <viewControllerLayoutGuide type="bottom" id="O3o-hJ-JaF"/>
@@ -114,9 +112,31 @@
                         <constraints>
                             <constraint firstItem="xfP-Lq-mMJ" firstAttribute="top" secondItem="FxY-NF-hpr" secondAttribute="bottom" id="3HB-hD-EMN"/>
                             <constraint firstItem="O3o-hJ-JaF" firstAttribute="top" secondItem="xfP-Lq-mMJ" secondAttribute="bottom" id="AUy-Q9-5AD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xfP-Lq-mMJ" secondAttribute="trailing" constant="-20" id="AtL-ay-QOL"/>
                             <constraint firstItem="xfP-Lq-mMJ" firstAttribute="leading" secondItem="mP7-6V-Lif" secondAttribute="leadingMargin" constant="-20" id="Fd3-9c-dBo"/>
+                            <constraint firstItem="xfP-Lq-mMJ" firstAttribute="top" secondItem="FxY-NF-hpr" secondAttribute="bottom" id="VUh-Wd-RT9"/>
+                            <constraint firstItem="O3o-hJ-JaF" firstAttribute="top" secondItem="xfP-Lq-mMJ" secondAttribute="bottom" id="g7v-7z-uCC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xfP-Lq-mMJ" secondAttribute="trailing" constant="-30" id="gkC-to-aTl"/>
+                            <constraint firstItem="xfP-Lq-mMJ" firstAttribute="top" secondItem="FxY-NF-hpr" secondAttribute="bottom" id="h4S-la-sDS"/>
+                            <constraint firstAttribute="trailing" secondItem="xfP-Lq-mMJ" secondAttribute="trailing" id="iXA-E1-DRD"/>
+                            <constraint firstItem="xfP-Lq-mMJ" firstAttribute="leading" secondItem="mP7-6V-Lif" secondAttribute="leadingMargin" id="kzJ-c9-YnE"/>
+                            <constraint firstItem="xfP-Lq-mMJ" firstAttribute="leading" secondItem="mP7-6V-Lif" secondAttribute="leading" id="lfw-Oa-EJZ"/>
+                            <constraint firstItem="O3o-hJ-JaF" firstAttribute="top" secondItem="xfP-Lq-mMJ" secondAttribute="bottom" id="pYv-xD-X8M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xfP-Lq-mMJ" secondAttribute="trailing" constant="-20" id="snm-fD-eWP"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3HB-hD-EMN"/>
+                                <exclude reference="AtL-ay-QOL"/>
+                                <exclude reference="Fd3-9c-dBo"/>
+                                <exclude reference="VUh-Wd-RT9"/>
+                                <exclude reference="gkC-to-aTl"/>
+                                <exclude reference="kzJ-c9-YnE"/>
+                                <exclude reference="snm-fD-eWP"/>
+                                <exclude reference="AUy-Q9-5AD"/>
+                                <exclude reference="pYv-xD-X8M"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="JHt-zq-za0"/>
                     <connections>
@@ -125,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0q-tu-nVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="706"/>
+            <point key="canvasLocation" x="1219" y="706"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4xS-AN-mD4">

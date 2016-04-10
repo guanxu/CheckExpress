@@ -8,22 +8,15 @@
 
 #import "MainViewController.h"
 #import "APIClient.h"
-#import "PopupView.h"
 #import "LoadingView.h"
 #import "CompaniesListViewController.h"
+#import "Constant.h"
 
 @interface MainViewController ()
 
 @end
 
-@implementation MainViewController{
-    
-    //短提示
-    PopupView           *popView;
-    //快递公司textFiled
-    IBOutlet UITextField *companyTextFiled;
-}
-
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,8 +31,8 @@
 
 //初始化
 - (void)initData{
-    popView = [[PopupView alloc] initWithFrame:CGRectMake(100, 300, 0, 0)];
-    popView.ParentView = self.view;
+    self.popView = [[PopupView alloc] initWithFrame:CGRectMake(100, 300, 0, 0)];
+    self.popView.ParentView = self.view;
 }
 
 //扫描
@@ -48,15 +41,6 @@
 
 //选择快递公司
 - (IBAction)selectBtnClick:(UIButton *)sender {
-    
-//    CompaniesListViewController *companiesListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CompaniesListViewController"];
-//    
-//    companiesListVC.selectCompany = ^(NSString *companyName,NSString *companyType){
-//        self.companyName = companyName;
-//        self.companyType = companyType;
-//        companyTextFiled.text = self.companyName;
-//    };
-    
 }
 
 //点击查询按钮
@@ -69,14 +53,33 @@
     //联网查询快递单号
     [self loadDataForSearchBtn];
 }
+- (IBAction)hideKeyboard:(id)sender {
+    [self.view endEditing:YES];
+}
+
+//- (IBAction)hideKeyboard:(id)sender {
+//    [self.view endEditing:YES];
+//}
 
 //检测输入项是否合法
 - (BOOL)checkValue{
     //检查备注
     
     //检查单号
+    if([self.expressNumber.text isEqualToString:@""]){
+        [self popViewWithString:@"请输入快递单号"];
+        return NO;
+    }
+    if(self.expressNumber.text.length<=3){
+        [self popViewWithString:@"快递单号不正确"];
+        return NO;
+    }
     
     //检查快递公司名
+    if([self.companyShowBtn.currentTitle isEqualToString:@""]){
+        [self popViewWithString:@"请选择快递公司"];
+        return NO;
+    }
     
     return YES;
 }
@@ -86,31 +89,24 @@
     
     [[LoadingView sharedLoadingView] loadingViewInView:self.view];
     //提交参数
-    NSDictionary *paramet = @{@"type"       :      @"SFEXPRESS",
-                              @"number":      @"993213992811"};
+    NSDictionary *paramet = @{@"type"   :  self.companyType,
+                              @"number" :  self.expressNumber};
     //请求
-    [[APIClient sharedClient] requestPath:@"http://apis.baidu.com/netpopo/express/express1"
+    [[APIClient sharedClient] requestPath:SEARCH_EXPRESS_PATH
                                parameters:paramet
                                   success:^(AFHTTPRequestOperation *operation, id JSON)
      //成功回调
      {
          
          //解析数据
-         NSDictionary *jsonDic = [JSON objectForKey:@"result"];
-         [jsonDic writeToFile:@"CompanyList.plist" atomically:YES];
-         
-         
-         [self.view addSubview:popView];
-         [popView setText:@"成功"];
-         [[LoadingView sharedLoadingView] removeView];
+         NSLog(@"json : %@",JSON);
+         [self popViewWithString:@"成功"];
          
      }
      //失败回调
                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
-         [self.view addSubview:popView];
-         [popView setText:@"网络有问题了"];
-         [[LoadingView sharedLoadingView] removeView];
+         [self popViewWithString:@"网络出问题"];
      }];
     
     
@@ -123,9 +119,17 @@
         companiesListVC.selectCompany = ^(NSString *companyName,NSString *companyType){
             self.companyName = companyName;
             self.companyType = companyType;
-            companyTextFiled.text = self.companyName;
+
+            [self.companyShowBtn setTitle:self.companyName forState:UIControlStateNormal];
         };
     }
+}
+
+//弹出提示
+- (void) popViewWithString:(NSString *)str{
+    [self.view addSubview:self.popView];
+    [self.popView setText:str];
+    [[LoadingView sharedLoadingView] removeView];
 }
 
 

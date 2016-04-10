@@ -51,6 +51,11 @@
     return [NSString stringWithFormat:@"   %@", dic[@"title"]];
 }
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    
+    return [self.companiesArray valueForKeyPath:@"title"];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [[self.companiesArray[section] objectForKey:@"companies"] count];
 }
