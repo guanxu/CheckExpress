@@ -82,8 +82,5 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"CompaniesListViewController调用");
-}
 
 @end

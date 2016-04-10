@@ -49,15 +49,14 @@
 //选择快递公司
 - (IBAction)selectBtnClick:(UIButton *)sender {
     
-    CompaniesListViewController *companiesListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CompaniesListViewController"];
+//    CompaniesListViewController *companiesListVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CompaniesListViewController"];
+//    
+//    companiesListVC.selectCompany = ^(NSString *companyName,NSString *companyType){
+//        self.companyName = companyName;
+//        self.companyType = companyType;
+//        companyTextFiled.text = self.companyName;
+//    };
     
-    companiesListVC.selectCompany = ^(NSString *companyName,NSString *companyType){
-        self.companyName = companyName;
-        self.companyType = companyType;
-        companyTextFiled.text = self.companyName;
-    };
-    
-    [self.navigationController pushViewController:companiesListVC animated:YES];
 }
 
 //点击查询按钮
@@ -115,6 +114,18 @@
      }];
     
     
+}
+
+//segue 跳转
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showCompaniesList"]){
+        CompaniesListViewController *companiesListVC = segue.destinationViewController;
+        companiesListVC.selectCompany = ^(NSString *companyName,NSString *companyType){
+            self.companyName = companyName;
+            self.companyType = companyType;
+            companyTextFiled.text = self.companyName;
+        };
+    }
 }
 
 
