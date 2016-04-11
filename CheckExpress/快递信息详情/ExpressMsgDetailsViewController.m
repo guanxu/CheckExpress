@@ -33,19 +33,18 @@
  */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"self.response : %@",self.response);
     return [[self.response.result objectForKey:@"list"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExpressMsgDetailsCell"];
+    ExpressMsgDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExpressMsgDetailsCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ExpressMsgDetailsCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ExpressMsgDetailsCell" forIndexPath:indexPath];
     }
     
-    NSArray *ExpressMsgArray = [self.response.result objectForKey:@"list"];
-    [(ExpressMsgDetailsTableViewCell *)cell layoutWithExpressStatusModel:[ExpressMsgArray objectAtIndex:indexPath.row]];
+    ExpressStatusModel *expressStatusModel = [[ExpressStatusModel alloc] initWithDictionary:[[self.response.result objectForKey:@"list"] objectAtIndex:indexPath.row]];
+    [cell layoutWithExpressStatusModel:expressStatusModel];
     
     return cell;
 }

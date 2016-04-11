@@ -12,10 +12,11 @@
 @interface ExpressStatusModel : NSObject
 
 //时间
-@property (nonatomic, strong) NSString *msg;
+@property (nonatomic, strong) NSString *time;
 
 //状态
 @property (nonatomic, strong) NSString *status;
 
+- (ExpressStatusModel *)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

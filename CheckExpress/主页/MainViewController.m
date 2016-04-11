@@ -44,9 +44,9 @@
 //点击查询按钮
 - (IBAction)searchBtnClick:(UIButton *)sender {
     //检测输入是否正确
-    if(![self checkValue]){
-        return;
-    }
+//    if(![self checkValue]){
+//        return;
+//    }
     
     //联网查询快递单号
     [self loadDataForSearchBtn];
@@ -55,9 +55,6 @@
     [self.view endEditing:YES];
 }
 
-//- (IBAction)hideKeyboard:(id)sender {
-//    [self.view endEditing:YES];
-//}
 
 //检测输入项是否合法
 - (BOOL)checkValue{
@@ -87,8 +84,8 @@
     
     [[LoadingView sharedLoadingView] loadingViewInView:self.view];
     //提交参数
-    NSDictionary *paramet = @{@"type"   :  self.companyType,
-                              @"number" :  self.expressNumber.text};
+    NSDictionary *paramet = @{@"type"   :  @"YUNDA",
+                              @"number" :  @"3941210120048"};
     //请求
     [[APIClient sharedClient] requestPath:SEARCH_EXPRESS_PATH
                                parameters:paramet
