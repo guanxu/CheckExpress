@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PopupView.h"
+#import "APIClient.h"
+#import "LoadingView.h"
+#import "CompaniesListViewController.h"
+#import "Constant.h"
+#import "Response.h"
+#import "ExpressMsgDetailsViewController.h"
+
 
 @interface MainViewController : UIViewController
 
@@ -23,5 +30,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *companyShowBtn;
 
 @property (nonatomic, strong) NSString *companyName,*companyType;
+
+@property (nonatomic, strong) Response *response;
 
 @end

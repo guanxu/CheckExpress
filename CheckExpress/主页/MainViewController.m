@@ -7,10 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "APIClient.h"
-#import "LoadingView.h"
-#import "CompaniesListViewController.h"
-#import "Constant.h"
+
 
 @interface MainViewController ()
 
@@ -37,6 +34,7 @@
 
 //扫描
 - (IBAction)scanningBtnClick:(UIButton *)sender {
+    
 }
 
 //选择快递公司
@@ -90,22 +88,31 @@
     [[LoadingView sharedLoadingView] loadingViewInView:self.view];
     //提交参数
     NSDictionary *paramet = @{@"type"   :  self.companyType,
-                              @"number" :  self.expressNumber};
+                              @"number" :  self.expressNumber.text};
     //请求
     [[APIClient sharedClient] requestPath:SEARCH_EXPRESS_PATH
                                parameters:paramet
                                   success:^(AFHTTPRequestOperation *operation, id JSON)
      //成功回调
      {
-         
-         //解析数据
+         [[LoadingView sharedLoadingView] removeView];
          NSLog(@"json : %@",JSON);
-         [self popViewWithString:@"成功"];
+         //解析数据
+         self.response = [[Response alloc] initWithDictionary:JSON];
          
+         if([self.response.status isEqualToString:@"0"]){
+             //正确
+             [self performSegueWithIdentifier:@"showExpressMsgDetails" sender:self];
+             
+         }else{
+             //错误
+             [self popViewWithString:[NSString stringWithFormat:@"错误码:%@ \n错误信息:%@",self.response.status,self.response.msg]];
+         }
      }
      //失败回调
                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
+         [[LoadingView sharedLoadingView] removeView];
          [self popViewWithString:@"网络出问题"];
      }];
     
@@ -114,6 +121,8 @@
 
 //segue 跳转
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    //跳转到公司列表时
     if([segue.identifier isEqualToString:@"showCompaniesList"]){
         CompaniesListViewController *companiesListVC = segue.destinationViewController;
         companiesListVC.selectCompany = ^(NSString *companyName,NSString *companyType){
@@ -122,6 +131,13 @@
 
             [self.companyShowBtn setTitle:self.companyName forState:UIControlStateNormal];
         };
+    }
+    
+    //跳转到快递详情时
+    if([segue.identifier isEqualToString:@"showExpressMsgDetails"]){
+        ExpressMsgDetailsViewController *expressMsgDetailsVC = segue.destinationViewController;
+        //传值
+        expressMsgDetailsVC.response = self.response;
     }
 }
 

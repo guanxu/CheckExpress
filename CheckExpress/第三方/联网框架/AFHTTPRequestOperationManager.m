@@ -27,6 +27,7 @@
 
 #import <Availability.h>
 #import <Security/Security.h>
+#import "Constant.h"
 
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 #import <UIKit/UIKit.h>
@@ -117,8 +118,8 @@
                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
-    [request setValue:@"e35e5d99a8b86cf6e449c55732f37c0c" forHTTPHeaderField:@"apikey"];
-    NSLog(@"%@", request.allHTTPHeaderFields);
+    //需要对header赋值
+    [request setValue:API_KEY forHTTPHeaderField:@"apikey"];
     
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self.operationQueue addOperation:operation];

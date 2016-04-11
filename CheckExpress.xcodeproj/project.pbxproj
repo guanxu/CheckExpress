@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E7CB6891CBB7F43006BA469 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CB6881CBB7F43006BA469 /* Response.m */; };
+		0E7CB68D1CBB857F006BA469 /* ExpressMsgDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CB68C1CBB857F006BA469 /* ExpressMsgDetailsViewController.m */; };
+		0E7CB6901CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CB68F1CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m */; };
+		0E7CB6961CBBA455006BA469 /* ExpressStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CB6951CBBA455006BA469 /* ExpressStatusModel.m */; };
 		0E9949911CB79AD3006A2C0B /* CompaniesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E9949901CB79AD3006A2C0B /* CompaniesList.plist */; };
 		ECD356131CB69B9600E53A52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356121CB69B9600E53A52 /* main.m */; };
 		ECD356161CB69B9600E53A52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356151CB69B9600E53A52 /* AppDelegate.m */; };
@@ -33,6 +37,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E7CB6871CBB7F43006BA469 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
+		0E7CB6881CBB7F43006BA469 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		0E7CB68B1CBB857F006BA469 /* ExpressMsgDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressMsgDetailsViewController.h; sourceTree = "<group>"; };
+		0E7CB68C1CBB857F006BA469 /* ExpressMsgDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressMsgDetailsViewController.m; sourceTree = "<group>"; };
+		0E7CB68E1CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressMsgDetailsTableViewCell.h; sourceTree = "<group>"; };
+		0E7CB68F1CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressMsgDetailsTableViewCell.m; sourceTree = "<group>"; };
+		0E7CB6941CBBA455006BA469 /* ExpressStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressStatusModel.h; sourceTree = "<group>"; };
+		0E7CB6951CBBA455006BA469 /* ExpressStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressStatusModel.m; sourceTree = "<group>"; };
 		0E9949901CB79AD3006A2C0B /* CompaniesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CompaniesList.plist; sourceTree = "<group>"; };
 		ECD3560E1CB69B9600E53A52 /* CheckExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD356121CB69B9600E53A52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +102,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E7CB6801CBB6084006BA469 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E7CB6871CBB7F43006BA469 /* Response.h */,
+				0E7CB6881CBB7F43006BA469 /* Response.m */,
+				0E7CB6941CBBA455006BA469 /* ExpressStatusModel.h */,
+				0E7CB6951CBBA455006BA469 /* ExpressStatusModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E7CB68A1CBB84F7006BA469 /* 快递信息详情 */ = {
+			isa = PBXGroup;
+			children = (
+				0E7CB68B1CBB857F006BA469 /* ExpressMsgDetailsViewController.h */,
+				0E7CB68C1CBB857F006BA469 /* ExpressMsgDetailsViewController.m */,
+				0E7CB68E1CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.h */,
+				0E7CB68F1CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m */,
+			);
+			path = "快递信息详情";
+			sourceTree = "<group>";
+		};
 		ECD356051CB69B9600E53A52 = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +143,12 @@
 		ECD356101CB69B9600E53A52 /* CheckExpress */ = {
 			isa = PBXGroup;
 			children = (
-				ECFF2E261CB7E3ED00A45DA5 /* 快递公司列表 */,
-				ECD356661CB6B51E00E53A52 /* 主页 */,
 				ECD356621CB6AD7C00E53A52 /* 工具 */,
 				ECD356321CB6ACDD00E53A52 /* 第三方 */,
+				ECD356661CB6B51E00E53A52 /* 主页 */,
+				0E7CB68A1CBB84F7006BA469 /* 快递信息详情 */,
+				ECFF2E261CB7E3ED00A45DA5 /* 快递公司列表 */,
+				0E7CB6801CBB6084006BA469 /* Model */,
 				ECD356141CB69B9600E53A52 /* AppDelegate.h */,
 				ECD356151CB69B9600E53A52 /* AppDelegate.m */,
 				ECD3561A1CB69B9600E53A52 /* Main.storyboard */,
@@ -301,14 +337,18 @@
 			files = (
 				ECD3565E1CB6ACDD00E53A52 /* AFURLConnectionOperation.m in Sources */,
 				ECD3561F1CB69B9600E53A52 /* CheckExpress.xcdatamodeld in Sources */,
+				0E7CB6901CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m in Sources */,
 				ECFF2E291CB7E42100A45DA5 /* CompaniesListViewController.m in Sources */,
 				ECD3565D1CB6ACDD00E53A52 /* AFSecurityPolicy.m in Sources */,
 				ECD356581CB6ACDD00E53A52 /* DataModel.m in Sources */,
 				ECD3565A1CB6ACDD00E53A52 /* AFHTTPRequestOperationManager.m in Sources */,
 				ECD356541CB6ACDD00E53A52 /* LoadingView.m in Sources */,
 				ECD356161CB69B9600E53A52 /* AppDelegate.m in Sources */,
+				0E7CB6961CBBA455006BA469 /* ExpressStatusModel.m in Sources */,
+				0E7CB6891CBB7F43006BA469 /* Response.m in Sources */,
 				ECD356571CB6ACDD00E53A52 /* APIClient.m in Sources */,
 				ECD356611CB6ACDD00E53A52 /* AFURLSessionManager.m in Sources */,
+				0E7CB68D1CBB857F006BA469 /* ExpressMsgDetailsViewController.m in Sources */,
 				ECD356601CB6ACDD00E53A52 /* AFURLResponseSerialization.m in Sources */,
 				ECD356561CB6ACDD00E53A52 /* PopupView.m in Sources */,
 				ECD356131CB69B9600E53A52 /* main.m in Sources */,
