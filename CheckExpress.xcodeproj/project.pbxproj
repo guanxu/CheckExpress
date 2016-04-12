@@ -12,6 +12,7 @@
 		0E7CB6901CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CB68F1CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m */; };
 		0E7CB6961CBBA455006BA469 /* ExpressStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CB6951CBBA455006BA469 /* ExpressStatusModel.m */; };
 		0E9949911CB79AD3006A2C0B /* CompaniesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E9949901CB79AD3006A2C0B /* CompaniesList.plist */; };
+		EC96E5871CBCA3560021A614 /* ToolFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = EC96E5861CBCA3560021A614 /* ToolFunction.m */; };
 		ECD356131CB69B9600E53A52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356121CB69B9600E53A52 /* main.m */; };
 		ECD356161CB69B9600E53A52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356151CB69B9600E53A52 /* AppDelegate.m */; };
 		ECD3561C1CB69B9600E53A52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECD3561A1CB69B9600E53A52 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		0E7CB6941CBBA455006BA469 /* ExpressStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressStatusModel.h; sourceTree = "<group>"; };
 		0E7CB6951CBBA455006BA469 /* ExpressStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressStatusModel.m; sourceTree = "<group>"; };
 		0E9949901CB79AD3006A2C0B /* CompaniesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CompaniesList.plist; sourceTree = "<group>"; };
+		EC96E5851CBCA3560021A614 /* ToolFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolFunction.h; sourceTree = "<group>"; };
+		EC96E5861CBCA3560021A614 /* ToolFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolFunction.m; sourceTree = "<group>"; };
 		ECD3560E1CB69B9600E53A52 /* CheckExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD356121CB69B9600E53A52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECD356141CB69B9600E53A52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				ECD3566A1CB6B54600E53A52 /* Constant.h */,
+				EC96E5851CBCA3560021A614 /* ToolFunction.h */,
+				EC96E5861CBCA3560021A614 /* ToolFunction.m */,
 			);
 			name = "工具";
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				0E7CB6891CBB7F43006BA469 /* Response.m in Sources */,
 				ECD356571CB6ACDD00E53A52 /* APIClient.m in Sources */,
 				ECD356611CB6ACDD00E53A52 /* AFURLSessionManager.m in Sources */,
+				EC96E5871CBCA3560021A614 /* ToolFunction.m in Sources */,
 				0E7CB68D1CBB857F006BA469 /* ExpressMsgDetailsViewController.m in Sources */,
 				ECD356601CB6ACDD00E53A52 /* AFURLResponseSerialization.m in Sources */,
 				ECD356561CB6ACDD00E53A52 /* PopupView.m in Sources */,
@@ -468,7 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CheckExpress/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guanxu.CheckExpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -480,7 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CheckExpress/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guanxu.CheckExpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ExpressStatusModel.h"
+#import "ToolFunction.h"
 
 @interface ExpressMsgDetailsTableViewCell : UITableViewCell
 

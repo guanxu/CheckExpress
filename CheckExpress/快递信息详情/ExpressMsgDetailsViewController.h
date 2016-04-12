@@ -13,5 +13,6 @@
 @interface ExpressMsgDetailsViewController : UIViewController
 
 @property (nonatomic, strong) Response *response;
+@property (strong, nonatomic) IBOutlet UITableView *expressStatusTableView;
 
 @end

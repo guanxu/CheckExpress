@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     
 }
 
@@ -45,7 +43,6 @@
     
     ExpressStatusModel *expressStatusModel = [[ExpressStatusModel alloc] initWithDictionary:[[self.response.result objectForKey:@"list"] objectAtIndex:indexPath.row]];
     [cell layoutWithExpressStatusModel:expressStatusModel];
-    
     return cell;
 }
 
