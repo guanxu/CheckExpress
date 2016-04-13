@@ -34,7 +34,9 @@
 
 //扫描
 - (IBAction)scanningBtnClick:(UIButton *)sender {
-    
+    //查询数据
+    NSArray *result = [ToolFunction queryData];
+    NSLog(@"result.count : %d",result.count);
 }
 
 //选择快递公司
@@ -98,7 +100,21 @@
          self.response = [[Response alloc] initWithDictionary:JSON];
          
          if([self.response.status isEqualToString:@"0"]){
-             //正确
+             //成功
+             
+             //开启线程 后台执行存储操作
+             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                 //拼装数据格式
+                 CheckExpressRecodsModel *checkExpressRecodsModel = [[CheckExpressRecodsModel alloc] init];
+                 checkExpressRecodsModel.expressNumber = @"3941210120048";
+                 checkExpressRecodsModel.expressCompany = @"YUNDA";
+                 checkExpressRecodsModel.expressStatusArray = [NSKeyedArchiver archivedDataWithRootObject:[self.response.result objectForKey:@"list"]];
+                 
+                 //调用插入数据方法
+                 [ToolFunction insertDataWithCheckExpressRecords:checkExpressRecodsModel];
+             });
+             
+             //跳转
              [self performSegueWithIdentifier:@"showExpressMsgDetails" sender:self];
              
          }else{

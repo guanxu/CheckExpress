@@ -10,6 +10,11 @@
 #define Constant_h
 #endif /* Constant_h */
 
+#import "AppDelegate.h"
+
+//AppDelegate
+#define SharedAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
 //查询快递请求地址
 #define SEARCH_EXPRESS_PATH @"http://apis.baidu.com/netpopo/express/express1"
 

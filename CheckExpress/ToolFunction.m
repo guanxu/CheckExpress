@@ -30,4 +30,26 @@
     return timeStr;
 }
 
+#pragma mark - 插入数据 数据格式CheckExpressRecodsModel
++ (void)insertDataWithCheckExpressRecords:(CheckExpressRecodsModel *)checkExpressRecordsModel{
+    
+    NSManagedObject *contactInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CheckExpressRecords" inManagedObjectContext:SharedAppDelegate.managedObjectContext];
+    [contactInfo setValue:checkExpressRecordsModel.expressNumber forKey:@"expressNumber"];
+    [contactInfo setValue:checkExpressRecordsModel.expressCompany forKey:@"expressCompany"];
+    [contactInfo setValue:checkExpressRecordsModel.expressStatusArray forKey:@"expressStatusArray"];
+    
+    if ([SharedAppDelegate.managedObjectContext save:nil]) {
+        NSLog(@"新增成功");
+    } else {
+        NSLog(@"新增失败");
+    }
+}
+
+#pragma mark - 查询数据 数据格式CheckExpressRecodsModel
++ (NSArray *)queryData{
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CheckExpressRecords"];
+    return [SharedAppDelegate.managedObjectContext executeFetchRequest:request error:nil];
+}
+
 @end

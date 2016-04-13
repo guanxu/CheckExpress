@@ -139,7 +139,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="JHt-zq-za0"/>
+                    <navigationItem key="navigationItem" title="快递公司列表" id="JHt-zq-za0"/>
                     <connections>
                         <outlet property="companiesTableView" destination="xfP-Lq-mMJ" id="Eaa-5k-2KY"/>
                     </connections>
@@ -310,16 +310,16 @@
             </objects>
             <point key="canvasLocation" x="-172" y="706"/>
         </scene>
-        <!--Root View Controller-->
+        <!--查询记录-->
         <scene sceneID="Feb-4b-eyG">
             <objects>
-                <tableViewController id="NIa-5r-3ye" sceneMemberID="viewController">
+                <tableViewController title="查询记录" id="NIa-5r-3ye" customClass="CheckRecordsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gx1-B4-Nab">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lyH-cY-3AO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CheckRecordsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckRecordsCell" id="lyH-cY-3AO" customClass="CheckRecordsTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lyH-cY-3AO" id="c3u-pU-0J9">
@@ -333,13 +333,16 @@
                             <outlet property="delegate" destination="NIa-5r-3ye" id="MsR-DM-MfM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="igF-MB-W7j"/>
+                    <navigationItem key="navigationItem" title="查询记录" id="igF-MB-W7j"/>
+                    <connections>
+                        <outlet property="CheckRecordsTableView" destination="gx1-B4-Nab" id="C3N-BE-sSF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkZ-xd-Tj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="541" y="1392"/>
         </scene>
-        <!--Root View Controller-->
+        <!--快递公司电话-->
         <scene sceneID="Y7o-n7-Rb8">
             <objects>
                 <tableViewController id="tbI-oN-hQN" sceneMemberID="viewController">
@@ -362,7 +365,7 @@
                             <outlet property="delegate" destination="tbI-oN-hQN" id="1xD-SW-cPx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="oIF-3x-dHv"/>
+                    <navigationItem key="navigationItem" title="快递公司电话" id="oIF-3x-dHv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wt4-1G-zHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
