@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ToolFunction.h"
 #import "CheckRecordsTableViewCell.h"
+#import "CheckExpressRecords+CoreDataProperties.h"
 
 @interface CheckRecordsTableViewController : UITableViewController
 

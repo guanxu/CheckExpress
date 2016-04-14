@@ -55,7 +55,9 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"CheckRecordsCell" forIndexPath:indexPath];
     }
     
-    cell.textLabel.text = [[self.checkRecordsArray objectAtIndex:indexPath.row] valueForKey:@"expressNumber"];
+    CheckExpressRecords *checkExpressRecords = [self.checkRecordsArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@  %@",checkExpressRecords.expressCompany,checkExpressRecords.expressNumber];
     
     return cell;
 }
