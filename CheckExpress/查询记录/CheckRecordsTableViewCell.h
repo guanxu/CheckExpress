@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CheckRecordsTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *expressCompanyAndNumberLabel;
+@property (strong, nonatomic) IBOutlet UILabel *expressStatusTimeLabel;
 
 @end

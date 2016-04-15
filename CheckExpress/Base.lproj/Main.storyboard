@@ -319,13 +319,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CheckRecordsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckRecordsCell" id="lyH-cY-3AO" customClass="CheckRecordsTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CheckRecordsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckRecordsCell" rowHeight="50" id="lyH-cY-3AO" customClass="CheckRecordsTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lyH-cY-3AO" id="c3u-pU-0J9">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公司+单号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9c-gU-i6y">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="29" id="6c9-2r-34R"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUa-5W-7US">
+                                            <rect key="frame" x="8" y="30" width="584" height="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="E9c-gU-i6y" firstAttribute="top" secondItem="c3u-pU-0J9" secondAttribute="top" id="3Ul-vn-dVs"/>
+                                        <constraint firstAttribute="trailing" secondItem="QUa-5W-7US" secondAttribute="trailing" constant="8" id="DBd-Nr-9zC"/>
+                                        <constraint firstItem="E9c-gU-i6y" firstAttribute="leading" secondItem="c3u-pU-0J9" secondAttribute="leading" constant="8" id="TBp-IT-LCm"/>
+                                        <constraint firstAttribute="trailing" secondItem="E9c-gU-i6y" secondAttribute="trailing" constant="8" id="mIe-ZR-ve9"/>
+                                        <constraint firstItem="QUa-5W-7US" firstAttribute="leading" secondItem="c3u-pU-0J9" secondAttribute="leading" constant="8" id="sgG-8G-zyS"/>
+                                        <constraint firstAttribute="bottom" secondItem="QUa-5W-7US" secondAttribute="bottom" id="vKV-Sb-4w3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="expressCompanyAndNumberLabel" destination="E9c-gU-i6y" id="JmR-9N-ocj"/>
+                                    <outlet property="expressStatusTimeLabel" destination="QUa-5W-7US" id="WGn-6Q-egz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

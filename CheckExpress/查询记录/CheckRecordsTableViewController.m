@@ -55,9 +55,15 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"CheckRecordsCell" forIndexPath:indexPath];
     }
     
+    //记录详情实体
     CheckExpressRecords *checkExpressRecords = [self.checkRecordsArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@  %@",checkExpressRecords.expressCompany,checkExpressRecords.expressNumber];
+    //公司+单号
+    cell.expressCompanyAndNumberLabel.text = [NSString stringWithFormat:@"%@  %@",checkExpressRecords.expressCompany,checkExpressRecords.expressNumber];
+    
+    //最近一条状态的日期
+    NSArray *expressStatusArray = [NSKeyedUnarchiver unarchiveObjectWithData:checkExpressRecords.expressStatusArray];
+    cell.expressStatusTimeLabel.text = [[expressStatusArray objectAtIndex:0] objectForKey:@"time"];
     
     return cell;
 }
