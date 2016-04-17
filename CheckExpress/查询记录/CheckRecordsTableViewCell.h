@@ -11,5 +11,6 @@
 @interface CheckRecordsTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *expressCompanyAndNumberLabel;
 @property (strong, nonatomic) IBOutlet UILabel *expressStatusTimeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *expressRemarksLabel;
 
 @end

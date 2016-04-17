@@ -34,6 +34,7 @@
 + (void)insertDataWithCheckExpressRecords:(CheckExpressRecodsModel *)checkExpressRecordsModel{
     
     NSManagedObject *contactInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CheckExpressRecords" inManagedObjectContext:SharedAppDelegate.managedObjectContext];
+    [contactInfo setValue:checkExpressRecordsModel.expressRemarks forKey:@"expressRemarks"];
     [contactInfo setValue:checkExpressRecordsModel.expressNumber forKey:@"expressNumber"];
     [contactInfo setValue:checkExpressRecordsModel.expressCompany forKey:@"expressCompany"];
     [contactInfo setValue:checkExpressRecordsModel.expressStatusArray forKey:@"expressStatusArray"];

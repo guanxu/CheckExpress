@@ -3,9 +3,10 @@
     <entity name="CheckExpressRecords" representedClassName="CheckExpressRecords" syncable="YES">
         <attribute name="expressCompany" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="expressNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expressRemarks" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="expressStatusArray" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CheckExpressRecords" positionX="-45" positionY="0" width="128" height="90"/>
+        <element name="CheckExpressRecords" positionX="-45" positionY="0" width="128" height="105"/>
     </elements>
 </model>

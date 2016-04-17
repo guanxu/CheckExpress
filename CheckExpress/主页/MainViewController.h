@@ -33,5 +33,7 @@
 @property (nonatomic, strong) NSString *companyName,*companyType;
 
 @property (nonatomic, strong) Response *response;
+//备注textFiled
+@property (strong, nonatomic) IBOutlet UITextField *remarksTextFiled;
 
 @end

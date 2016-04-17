@@ -106,6 +106,7 @@
              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                  //拼装数据格式
                  CheckExpressRecodsModel *checkExpressRecodsModel = [[CheckExpressRecodsModel alloc] init];
+                 checkExpressRecodsModel.expressRemarks = self.remarksTextFiled.text;
                  checkExpressRecodsModel.expressNumber = @"3941210120048";
                  checkExpressRecodsModel.expressCompany = @"YUNDA";
                  checkExpressRecodsModel.expressStatusArray = [NSKeyedArchiver archivedDataWithRootObject:[self.response.result objectForKey:@"list"]];

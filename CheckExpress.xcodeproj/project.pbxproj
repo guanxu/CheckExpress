@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E6717191CBE27DE0053FBF4 /* CheckExpressRecords+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6717161CBE27DE0053FBF4 /* CheckExpressRecords+CoreDataProperties.m */; };
-		0E67171A1CBE27DE0053FBF4 /* CheckExpressRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6717181CBE27DE0053FBF4 /* CheckExpressRecords.m */; };
 		0E67171D1CBE32B80053FBF4 /* CheckExpressRecodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E67171C1CBE32B80053FBF4 /* CheckExpressRecodsModel.m */; };
 		0E6717211CBE3BF60053FBF4 /* CheckRecordsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6717201CBE3BF60053FBF4 /* CheckRecordsTableViewController.m */; };
 		0E6717241CBE404F0053FBF4 /* CheckRecordsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6717231CBE404F0053FBF4 /* CheckRecordsTableViewCell.m */; };
@@ -17,6 +15,8 @@
 		0E7CB6901CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CB68F1CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m */; };
 		0E7CB6961CBBA455006BA469 /* ExpressStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CB6951CBBA455006BA469 /* ExpressStatusModel.m */; };
 		0E9949911CB79AD3006A2C0B /* CompaniesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E9949901CB79AD3006A2C0B /* CompaniesList.plist */; };
+		EC54EF0A1CC3BFB3006A77FD /* CheckExpressRecords+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EC54EF071CC3BFB3006A77FD /* CheckExpressRecords+CoreDataProperties.m */; };
+		EC54EF0B1CC3BFB3006A77FD /* CheckExpressRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = EC54EF091CC3BFB3006A77FD /* CheckExpressRecords.m */; };
 		EC96E5871CBCA3560021A614 /* ToolFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = EC96E5861CBCA3560021A614 /* ToolFunction.m */; };
 		ECD356131CB69B9600E53A52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356121CB69B9600E53A52 /* main.m */; };
 		ECD356161CB69B9600E53A52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD356151CB69B9600E53A52 /* AppDelegate.m */; };
@@ -43,10 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E6717151CBE27DE0053FBF4 /* CheckExpressRecords+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CheckExpressRecords+CoreDataProperties.h"; sourceTree = "<group>"; };
-		0E6717161CBE27DE0053FBF4 /* CheckExpressRecords+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CheckExpressRecords+CoreDataProperties.m"; sourceTree = "<group>"; };
-		0E6717171CBE27DE0053FBF4 /* CheckExpressRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckExpressRecords.h; sourceTree = "<group>"; };
-		0E6717181CBE27DE0053FBF4 /* CheckExpressRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckExpressRecords.m; sourceTree = "<group>"; };
 		0E67171B1CBE32B80053FBF4 /* CheckExpressRecodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckExpressRecodsModel.h; sourceTree = "<group>"; };
 		0E67171C1CBE32B80053FBF4 /* CheckExpressRecodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckExpressRecodsModel.m; sourceTree = "<group>"; };
 		0E67171F1CBE3BF60053FBF4 /* CheckRecordsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckRecordsTableViewController.h; sourceTree = "<group>"; };
@@ -62,6 +58,11 @@
 		0E7CB6941CBBA455006BA469 /* ExpressStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressStatusModel.h; sourceTree = "<group>"; };
 		0E7CB6951CBBA455006BA469 /* ExpressStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressStatusModel.m; sourceTree = "<group>"; };
 		0E9949901CB79AD3006A2C0B /* CompaniesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CompaniesList.plist; sourceTree = "<group>"; };
+		EC54EEFF1CC3B8CD006A77FD /* CheckExpress 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CheckExpress 2.xcdatamodel"; sourceTree = "<group>"; };
+		EC54EF061CC3BFB3006A77FD /* CheckExpressRecords+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CheckExpressRecords+CoreDataProperties.h"; sourceTree = "<group>"; };
+		EC54EF071CC3BFB3006A77FD /* CheckExpressRecords+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CheckExpressRecords+CoreDataProperties.m"; sourceTree = "<group>"; };
+		EC54EF081CC3BFB3006A77FD /* CheckExpressRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckExpressRecords.h; sourceTree = "<group>"; };
+		EC54EF091CC3BFB3006A77FD /* CheckExpressRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckExpressRecords.m; sourceTree = "<group>"; };
 		EC96E5851CBCA3560021A614 /* ToolFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolFunction.h; sourceTree = "<group>"; };
 		EC96E5861CBCA3560021A614 /* ToolFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolFunction.m; sourceTree = "<group>"; };
 		ECD3560E1CB69B9600E53A52 /* CheckExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,10 +124,10 @@
 		0E6716E41CBE1D030053FBF4 /* CoreData相关类 */ = {
 			isa = PBXGroup;
 			children = (
-				0E6717151CBE27DE0053FBF4 /* CheckExpressRecords+CoreDataProperties.h */,
-				0E6717161CBE27DE0053FBF4 /* CheckExpressRecords+CoreDataProperties.m */,
-				0E6717171CBE27DE0053FBF4 /* CheckExpressRecords.h */,
-				0E6717181CBE27DE0053FBF4 /* CheckExpressRecords.m */,
+				EC54EF061CC3BFB3006A77FD /* CheckExpressRecords+CoreDataProperties.h */,
+				EC54EF071CC3BFB3006A77FD /* CheckExpressRecords+CoreDataProperties.m */,
+				EC54EF081CC3BFB3006A77FD /* CheckExpressRecords.h */,
+				EC54EF091CC3BFB3006A77FD /* CheckExpressRecords.m */,
 				0E67171B1CBE32B80053FBF4 /* CheckExpressRecodsModel.h */,
 				0E67171C1CBE32B80053FBF4 /* CheckExpressRecodsModel.m */,
 			);
@@ -383,13 +384,12 @@
 			files = (
 				ECD3565E1CB6ACDD00E53A52 /* AFURLConnectionOperation.m in Sources */,
 				ECD3561F1CB69B9600E53A52 /* CheckExpress.xcdatamodeld in Sources */,
-				0E67171A1CBE27DE0053FBF4 /* CheckExpressRecords.m in Sources */,
 				0E7CB6901CBB9D71006BA469 /* ExpressMsgDetailsTableViewCell.m in Sources */,
 				ECFF2E291CB7E42100A45DA5 /* CompaniesListViewController.m in Sources */,
+				EC54EF0A1CC3BFB3006A77FD /* CheckExpressRecords+CoreDataProperties.m in Sources */,
 				ECD3565D1CB6ACDD00E53A52 /* AFSecurityPolicy.m in Sources */,
 				ECD356581CB6ACDD00E53A52 /* DataModel.m in Sources */,
 				ECD3565A1CB6ACDD00E53A52 /* AFHTTPRequestOperationManager.m in Sources */,
-				0E6717191CBE27DE0053FBF4 /* CheckExpressRecords+CoreDataProperties.m in Sources */,
 				ECD356541CB6ACDD00E53A52 /* LoadingView.m in Sources */,
 				ECD356161CB69B9600E53A52 /* AppDelegate.m in Sources */,
 				0E67171D1CBE32B80053FBF4 /* CheckExpressRecodsModel.m in Sources */,
@@ -399,6 +399,7 @@
 				ECD356571CB6ACDD00E53A52 /* APIClient.m in Sources */,
 				ECD356611CB6ACDD00E53A52 /* AFURLSessionManager.m in Sources */,
 				EC96E5871CBCA3560021A614 /* ToolFunction.m in Sources */,
+				EC54EF0B1CC3BFB3006A77FD /* CheckExpressRecords.m in Sources */,
 				0E7CB68D1CBB857F006BA469 /* ExpressMsgDetailsViewController.m in Sources */,
 				ECD356601CB6ACDD00E53A52 /* AFURLResponseSerialization.m in Sources */,
 				ECD356561CB6ACDD00E53A52 /* PopupView.m in Sources */,
@@ -566,9 +567,10 @@
 		ECD3561D1CB69B9600E53A52 /* CheckExpress.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				EC54EEFF1CC3B8CD006A77FD /* CheckExpress 2.xcdatamodel */,
 				ECD3561E1CB69B9600E53A52 /* CheckExpress.xcdatamodel */,
 			);
-			currentVersion = ECD3561E1CB69B9600E53A52 /* CheckExpress.xcdatamodel */;
+			currentVersion = EC54EEFF1CC3B8CD006A77FD /* CheckExpress 2.xcdatamodel */;
 			path = CheckExpress.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

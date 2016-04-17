@@ -65,6 +65,10 @@
     NSArray *expressStatusArray = [NSKeyedUnarchiver unarchiveObjectWithData:checkExpressRecords.expressStatusArray];
     cell.expressStatusTimeLabel.text = [[expressStatusArray objectAtIndex:0] objectForKey:@"time"];
     
+    //备注
+    if(checkExpressRecords.expressRemarks){
+        cell.expressRemarksLabel.text = checkExpressRecords.expressRemarks;
+    }
     return cell;
 }
 

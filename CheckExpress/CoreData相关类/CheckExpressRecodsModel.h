@@ -10,6 +10,7 @@
 
 @interface CheckExpressRecodsModel : NSObject
 
+@property (nonatomic, retain) NSString *expressRemarks;
 @property (nonatomic, retain) NSString *expressNumber;
 @property (nonatomic, retain) NSString *expressCompany;
 @property (nonatomic, retain) NSData *expressStatusArray;
